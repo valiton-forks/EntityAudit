@@ -22,9 +22,15 @@
 
 namespace SimpleThings\EntityAudit;
 
+use SimpleThings\EntityAudit\DependencyInjection\Compiler\CustomDoctrineCompilerPass;
+use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
 class SimpleThingsEntityAuditBundle extends Bundle
 {
+    public function build(ContainerBuilder $container)
+    {
+        $container->addCompilerPass(new CustomDoctrineCompilerPass());
+    }
 
 }
