@@ -13,6 +13,8 @@ class Configuration implements ConfigurationInterface
         $builder = new TreeBuilder();
         $builder->root('simple_things_entity_audit')
             ->children()
+                ->scalarNode('entity_manager')->defaultValue('default')->end()
+                ->scalarNode('connection')->defaultValue('default')->end()
                 ->arrayNode('audited_entities')
                     ->prototype('scalar')->end()
                 ->end()
