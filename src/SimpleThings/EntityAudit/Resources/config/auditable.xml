@@ -21,17 +21,15 @@
         </service>
 
         <service id="simplethings_entityaudit.reader" class="SimpleThings\EntityAudit\AuditReader" factory-service="simplethings_entityaudit.manager" factory-method="createAuditReader">
-            <argument type="service" id="%simplethings.entityaudit.entity_manager%" />
+            <argument/>
         </service>
 
         <service id="simplethings_entityaudit.log_revisions_listener" class="SimpleThings\EntityAudit\EventListener\LogRevisionsListener">
             <argument id="simplethings_entityaudit.manager" type="service" />
-            <tag name="doctrine.event_subscriber" connection="%simplethings.entityaudit.connection%" />
         </service>
 
         <service id="simplethings_entityaudit.create_schema_listener" class="SimpleThings\EntityAudit\EventListener\CreateSchemaListener">
             <argument id="simplethings_entityaudit.manager" type="service" />
-            <tag name="doctrine.event_subscriber" connection="%simplethings.entityaudit.connection%" />
         </service>
 
         <service id="simplethings_entityaudit.config" class="SimpleThings\EntityAudit\AuditConfiguration">
