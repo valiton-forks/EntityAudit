@@ -30,12 +30,10 @@
 
         <service id="simplethings_entityaudit.log_revisions_listener" class="SimpleThings\EntityAudit\EventListener\LogRevisionsListener">
             <argument id="simplethings_entityaudit.manager" type="service" />
-            <tag name="doctrine.event_subscriber" connection="%simplethings.entityaudit.connection%" />
         </service>
 
         <service id="simplethings_entityaudit.create_schema_listener" class="SimpleThings\EntityAudit\EventListener\CreateSchemaListener">
             <argument id="simplethings_entityaudit.manager" type="service" />
-            <tag name="doctrine.event_subscriber" connection="%simplethings.entityaudit.connection%" />
         </service>
 
         <service id="simplethings_entityaudit.username_callable.token_storage" class="SimpleThings\EntityAudit\User\TokenStorageUsernameCallable">
