@@ -24,6 +24,7 @@
 
         <service id="simplethings_entityaudit.reader" class="SimpleThings\EntityAudit\AuditReader" public="true">
             <factory service="simplethings_entityaudit.manager" method="createAuditReader" />
+            <argument/>
         </service>
 
         <service id="SimpleThings\EntityAudit\AuditReader" alias="simplethings_entityaudit.reader" />
